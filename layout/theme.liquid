@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <!-- Typeface and Icon supports ================================ -->
+  <script src="https://kit.fontawesome.com/6421d1e8fb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/xgr5gof.css">
+
+  <!-- CSS ================================================== -->
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'main.css' | asset_url | stylesheet_tag }} <!-- custom styles by Daniel Bögre Udell (@bogreudell) -->
+
+  <!-- Sections ================================================== -->
+  <script>
+    window.theme = window.theme || {};
+    theme.strings = {
+      zoomClose: {{ "products.zoom.close" | t | json }},
+      zoomPrev: {{ "products.zoom.prev" | t | json }},
+      zoomNext: {{ "products.zoom.next" | t | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      addressError: {{ 'home_page.map.address_error' | t | json }},
+      addressNoResults: {{ 'home_page.map.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'home_page.map.address_query_limit_html' | t | json }},
+      authError: {{ 'home_page.map.auth_error_html' | t | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartCookie: {{ 'cart.general.cookies_required' | t | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: savings: '[savings]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      gridType: {{ settings.collection_products_grid | json }}
+    };
+  </script>
+
+  {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template.directory == 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+<!-- ClothingStore Schema Start -->
+<script type="application/ld+json">
+{
+  "@context": "http:\/\/schema.org",
+  "@type": "ClothingStore",
+  "name": "The YALI Tribe Showroom",
+  "description": "We are inspired by Italian Renaissance paintings and Chinese rare to find materials. Our mission is to create breathable, durable and timeless clothing that lasts, to make clothes to treasure, that will never go out of fashion and will stay in your wardrobe forever. We use pure and natural textiles such as Suzhou silk and Nankeen linen that develop unique imperfections over time, telling the story of the person who wears them.",
+  "url": "https://yalitribe.com/",
+  "logo": "https://cdn.shopify.com/s/files/1/0076/3556/6677/files/57cd83de-871f-4792-8d1d-8b29b008fe01_0febaa03-6647-4959-9ce5-d699115dd599_100x.png?v=1589231650",
+  "image": [
+  {
+  "@type": "imageObject",
+"url": ["https://cdn.shopify.com/s/files/1/0076/3556/6677/products/YALI_Aug_20192283Christophe_f6190d47-2c77-4d35-ab33-9aa048b79b92_360x.jpg?v=1578315806","https://cdn.shopify.com/s/files/1/0076/3556/6677/collections/YALI-Bao_Bags-1_360x.jpg?v=1567794545","https://cdn.shopify.com/s/files/1/0076/3556/6677/products/D7A5389_360x.jpg?v=1587394234","https://cdn.shopify.com/s/files/1/0076/3556/6677/files/FINAL3rdSlideimage_300x.jpg?v=1589492916"]
+   }
+   ],
+  "priceRange": "$500-$900",
+  "telephone": "+1 646-833-9846",
+  "email": "team@yalitribe.com",
+  "areaServed": "Worldwide",
+  "hasMap": "https://goo.gl/maps/9h8wAERqJVaZiWTc9",
+  "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.720116",
+      "longitude": "-73.999008"
+  },
+"openinghours":[
+     "Mo-Su 00:00:23:59"
+ ],
+"address": {
+    "@type": "PostalAddress",
+    "streetAddress": "187 Lafayette St",
+    "addressLocality": "New York",
+    "postalCode": "10013",
+    "addressCountry": "United States",
+    "addressRegion": "NY"
+}}
+}
+</script>
+<!-- ClothingStore Schema End -->
+<!-- Organization Schema Start -->
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "Organization",
+"name": "The YALI Tribe Showroom",
+"description": "We are inspired by Italian Renaissance paintings and Chinese rare to find materials. Our mission is to create breathable, durable and timeless clothing that lasts, to make clothes to treasure, that will never go out of fashion and will stay in your wardrobe forever. We use pure and natural textiles such as Suzhou silk and Nankeen linen that develop unique imperfections over time, telling the story of the person who wears them.",
+"url": "https://yalitribe.com/",
+"logo": "https://cdn.shopify.com/s/files/1/0076/3556/6677/files/57cd83de-871f-4792-8d1d-8b29b008fe01_0febaa03-6647-4959-9ce5-d699115dd599_100x.png?v=1589231650",
+"contactPoint": [
+    {
+        "@type": "ContactPoint",
+        "telephone": "+1 646-833-9846",
+        "contactType": "customer service",
+        "email": "team@yalitribe.com",
+        "availableLanguage": [
+            "en-US"
+        ]
+    }
+],
+"address": {
+    "@type": "PostalAddress",
+    "streetAddress": "187 Lafayette St",
+    "addressLocality": "New York",
+    "postalCode": "10013",
+    "addressCountry": "United States",
+    "addressRegion": "NY"
+},
+"sameAs": ["https://www.instagram.com/theyalitribe/?hl=en","https://www.facebook.com/yalitribe/"]
+}
+</script>
+<!-- Organization Schema End -->  
+  
+</head>
+
+{% comment %}
+  Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+
+  {% section 'header' %}
+
+  <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header">
+        <div class="drawer__title">{{ 'cart.general.title' | t }}</div>
+        <div class="drawer__close">
+          <button type="button" class="icon-fallback-text drawer__close-button js-drawer-close">
+            <span class="icon icon-x" aria-hidden="true"></span>
+            <span class="fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__inner">
+      <div id="CartContainer" class="drawer__cart"></div>
+    </div>
+  </div>
+
+  {% comment %}
+    Begin code by Daniel Bögre Udell (@bogreudell)
+  {% endcomment %}
+  {% if template.name == "index" %}
+    {% include 'homepage-banner' %}
+    {% include 'featured-products' %}
+    {% include 'executive-summary' %}
+    {% include 'featured-collection' %}
+    {% include 'mission-statement' %}
+    {% include 'instagram-integration' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+  {% comment %}
+    End code by Daniel Bögre Udell (@bogreudell)
+  {% endcomment %}
+
+  {% unless template.name == "index" %}
+  <div id="PageContainer" class="page-container">
+
+    <main class="main-content" role="main">
+      <!-- keep conditional for collections, remove for index -->
+      {% unless template.name == "index" or template == "collection.image" %}
+        <div class="wrapper">
+      {% endunless %}
+        {{ content_for_layout }}
+      {% unless template.name == "index" or template == "collection.image" %}
+        </div>
+      {% endunless %}
+    </main>
+
+    <hr class="hr--large">
+
+    {% comment %}
+    {% section 'footer' %}
+    {% endcomment %}
+  </div>
+  {% endunless %}
+
+  {% section 'footer' %}
+
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+  <script>
+    {% if resetPassword %}
+      $(function() {
+        timber.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+
+  {% comment %}
+    Ajaxify your cart with this plugin.
+    Documentation:
+      - http://shopify.com/timber#ajax-cart
+  {% endcomment %}
+  {% if settings.cart_type == 'drawer' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+
+  {% if template.name == 'product' or template.name == 'index' %}
+      <script>
+        // Override default values of shop.strings for each template.
+        // Alternate product templates can change values of
+        // add to cart button, sold out, and unavailable states here.
+        theme.productStrings = {
+          addToCart: {{ 'products.product.add_to_cart' | t | json }},
+          soldOut: {{ 'products.product.sold_out' | t | json }},
+          unavailable: {{ 'products.product.unavailable' | t | json }}
+        }
+      </script>
+    {% endif %}
+
+  <div id="SearchModal" class="mfp-hide">
+    {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--modal' %}
+  </div>
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+  </ul>
+</body>
+</html>

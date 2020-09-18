@@ -1,0 +1,9 @@
+<div class="yali_executive-summary yali_homepage-section">
+	{% if settings.executive-summary-header != '' %}
+	<h1>{{ settings.executive-summary-header }}</h1>
+	{% endif %}
+
+	{% if settings.executive-summary-copy %}
+	<p>{{ settings.executive-summary-copy }}</p>
+	{% endif %}
+</div>

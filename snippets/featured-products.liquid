@@ -1,0 +1,17 @@
+<div class="yali_featured-products yali_homepage-section">
+	<a href="" class="yali_featured-products__shop-all">Shop All</a>
+	<div class="yali_featured-products__carousel">
+		<ul>
+		{% for product in collections[settings.featured-products].products %}
+			<li id="yali_product--{{ product.id }}" class="yali_featured-products__product" style="background:url({{ product.featured_image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
+				<a href="{{ product.url }}">
+				<div class="yali_height-padding">
+				</div>
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+		<button id="yali_featured-products__scroll--left" class="hidden"><!-- draw with css --></button>
+		<button id="yali_featured-products__scroll--right"><!-- draw with css --></button>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="yali_banner__wrapper yali_homepage-section">
+	{% if settings.show_homepage_video %}
+		<!-- desktop video -->
+		<video class="yali_banner__video" playsinline loop="true" muted autoplay="true" {% if settings.carousel-video-thumbnail.jpg != '' %} poster="https:{{ 'carousel-video-thumbnail.jpg' | asset_url }}" {% endif %}>
+			{% if settings.carousel_video_hd_streaming_1 != empty %}
+				<source src="{{ settings.carousel_video_hd_streaming_1 }}" type="video/mp4">
+			{% endif %}
+			{% if settings.carousel_video_hd_streaming_2 != empty %}
+				<source src="{{ settings.carousel_video_hd_streaming_2 }}" type="video/mp4">
+			{% endif %}
+			{% if settings.carousel_video_sd_streaming != empty %}
+				<source src="{{ settings.carousel_video_sd_streaming}}" type="video/mp4">
+			{% endif %}
+			{% if settings.carousel_video_low_def_streaming != empty %}
+				<source src="{{ settings.carousel_video_low_def_streaming }}" type="video/mp4">
+			{% endif %}
+		</video><!-- end desktop video -->
+		<div class="yali_banner__video-controls">
+			<div class="yali_banner__video-controls--wrapper">
+				<button id="yali_play"><i class="fal fa-play"></i></button>
+				<button id="yali_pause"><i class="fal fa-pause"></i></button>
+				<button id="yali_volume-on"><i class="fal fa-volume-up"></i></button>
+				<button id="yali_volume-off"><i class="fal fa-volume-mute"></i></button>
+			</div>
+		</div>
+	{% endif %}
+</div>

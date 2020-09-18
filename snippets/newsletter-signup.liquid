@@ -1,0 +1,44 @@
+<div class="yali_footer__newsletter" data-section-id="{{ section.id }}" data-section-type="newsletter-section">
+  <div class="wrapper">
+    {% unless section.settings.heading == blank %}
+      <div class="section-header text-center">
+        <h2 class="h1 section-header__title">{{ section.settings.heading | escape }}</h2>
+        {% if section.settings.subheading == blank %}
+          <hr class="hr--small">
+        {% endif %}
+      </div>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <div class="section-subheading rte text-center">
+        {{ section.settings.subheading }}
+        <hr class="hr--small">
+      </div>
+    {% endunless %}
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <div class="newsletter--form">
+          <div class="note form-success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
+        </div>
+      {% else %}
+        <label for="Email" class="newsletter__label hidden-label">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter--form">
+          <div class="input-group">
+            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+            <span class="input-group-btn">
+              <button id="Subscribe" type="submit"
+                class="btn newsletter__submit"
+                aria-label="{{ 'general.newsletter_form.submit' | t }}">
+                <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                <span class="newsletter__submit-text--small">
+                  <span class="icon icon-arrow-right" aria-hidden="true"></span>
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+</div>

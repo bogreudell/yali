@@ -1,0 +1,11 @@
+<!-- how to test if this setting exists? -->
+<div style="background:url({{ collections[settings.featured-collection].image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;" class="yali_featured-collection yali_homepage-section">
+	<a href="{{ collections[settings.featured-collection].url }}">
+		<div class="yali_featured-collection__banner">
+			<div class="yali_featured-collection__title">
+				<h1>{{ collections[settings.featured-collection].title }}</h1>
+				<h2>Shop the collection</h2>
+			</div>
+		</div>
+	</a>
+</div>

@@ -1,0 +1,37 @@
+/* attribute variables */
+$red = #de0026
+$white = #f1f0f5
+$black = #000000
+$verticalMarginsShort = 94px
+$verticalMarginsTall = 188px
+
+/* element styles variables */
+copyFont()
+	font-family garvis-pro, serif
+	/* font weights - 400 and 700 */
+
+interactiveCopy(a, b, c)
+	font-family brother-1816, sans-serif
+	font-weight a
+	text-transform uppercase
+	color b
+	font-size c
+	/* font weights - 500 and 700 */
+
+shopButton()
+	display block
+	margin $verticalMarginsShort auto
+	width 90%
+	max-width 300px
+	padding 10px 0
+	border 1px solid $red
+	border-radius 2px
+	text-align center
+	interactiveCopy(700, $red, 14pt)
+
+@require 'global'
+@require 'homepage-banner'
+@require 'featured-products'
+@require 'executive-summary'
+@require 'featured-collection'
+@require 'mission-statement'

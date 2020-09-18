@@ -1,0 +1,8 @@
+.yali_executive-summary {
+  margin: $verticalMarginsShort auto;
+  width: 90%;
+  max-width: 600px;
+}
+.yali_executive-summary h1 {
+  width: 0;
+}

@@ -1,0 +1,24 @@
+.yali_featured-products__shop-all:hover {
+  color: $white;
+  background: $red;
+}
+.yali_featured-products__carousel {
+  padding-left: 0;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.yali_featured-products__carousel ul {
+  margin: 0;
+  padding: 0;
+}
+.yali_featured-products__carousel button {
+  display: none;
+}
+.yali_featured-products__product {
+  list-style: none;
+  display: inline-block;
+  width: 25%;
+}
+.yali_featured-products__product .yali_height-padding {
+  padding-bottom: 166%;
+}
