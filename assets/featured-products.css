@@ -3,16 +3,48 @@
   background: $red;
 }
 .yali_featured-products__carousel {
+  position: relative;
   padding-left: 0;
   white-space: nowrap;
-  overflow-x: scroll;
 }
 .yali_featured-products__carousel ul {
+  width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+.yali_featured-products__carousel ul li {
+  margin-bottom: 0;
 }
 .yali_featured-products__carousel button {
   display: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -moz-transform: translateY(-50%) rotate(-45deg);
+  -o-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+  transition: opacity 0.2s ease-in-out;
+}
+.yali_featured-products__carousel button#yali_featured-products__scroll--right {
+  width: 40px;
+  height: 40px;
+  right: 30px;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+.yali_featured-products__carousel button#yali_featured-products__scroll--left {
+  width: 40px;
+  height: 40px;
+  left: 30px;
+  border-left: 5px solid #fff;
+  border-top: 5px solid #fff;
+}
+.yali_featured-products__carousel button.hidden {
+  opacity: 0;
+}
+.yali_featured-products__carousel button:focus {
+  outline: none;
 }
 .yali_featured-products__product {
   list-style: none;

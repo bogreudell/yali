@@ -1,7 +1,7 @@
 <div class="yali_banner__wrapper yali_homepage-section">
 	{% if settings.show_homepage_video %}
 		<!-- desktop video -->
-		<video class="yali_banner__video" playsinline loop="true" muted autoplay="true" {% if settings.carousel-video-thumbnail.jpg != '' %} poster="https:{{ 'carousel-video-thumbnail.jpg' | asset_url }}" {% endif %}>
+		<video class="yali_banner__video" playsinline loop="true" muted autoplay="true" {% comment %}{% if settings.carousel-video-thumbnail.jpg != '' %} poster="https:{{ 'carousel-video-thumbnail.jpg' | asset_url }}" {% endif %}{% endcomment %}>
 			{% if settings.carousel_video_hd_streaming_1 != empty %}
 				<source src="{{ settings.carousel_video_hd_streaming_1 }}" type="video/mp4">
 			{% endif %}

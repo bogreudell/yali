@@ -1,4 +1,5 @@
 body {
+  font-size: 62.5%;
   background: $white;
 }
 body.template-index {
@@ -19,10 +20,14 @@ body .yali_header {
   box-sizing: border-box;
   background: #fff;
   white-space: nowrap;
+  transition: 0.2s all ease-in-out;
 }
 body .yali_header.minimized {
   height: 60px;
-  transition: 0.2s height ease-in-out;
+  padding: 10px;
+  background: rgba(255,255,255,0.98);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 body .yali_header__element--nav {
   flex: auto;
@@ -68,13 +73,8 @@ body .yali_header__element--logo img {
   width: auto;
   height: 100%;
 }
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body p {
-  font-weight: 400;
+body .cart-link__bubble--visible {
+  background-color: $red !important;
 }
 body .yali_footer {
   padding: $verticalMarginsShort;
@@ -89,10 +89,6 @@ body .yali_footer__newsletter {
 }
 body .yali_footer__newsletter .section-header {
   margin-bottom: 0;
-}
-body .yali_footer__newsletter .section-header h1,
-body .yali_footer__newsletter .section-header h2 {
-  font-weight: 400;
 }
 body .yali_footer__newsletter .section-subheading {
   width: 400px;

@@ -2,7 +2,7 @@
 	<a href="" class="yali_featured-products__shop-all">Shop All</a>
 	<div class="yali_featured-products__carousel">
 		<ul>
-		{% for product in collections[settings.featured-products].products %}
+		{% for product in collections[settings.featured-products].products limit:4 %}
 			<li id="yali_product--{{ product.id }}" class="yali_featured-products__product" style="background:url({{ product.featured_image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
 				<a href="{{ product.url }}">
 				<div class="yali_height-padding">

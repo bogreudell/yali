@@ -1,7 +1,25 @@
 /* attribute variables */
 /* element styles variables */
 body {
+  font-size: 62.5%;
   background: #f1f0f5;
+}
+body h1 {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+body h2 {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+body p {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+/* font weights - 400 and 700 */
 }
 body.template-index {
   padding-top: 80px;
@@ -21,10 +39,14 @@ body .yali_header {
   box-sizing: border-box;
   background: #fff;
   white-space: nowrap;
+  transition: 0.2s all ease-in-out;
 }
 body .yali_header.minimized {
   height: 60px;
-  transition: 0.2s height ease-in-out;
+  padding: 10px;
+  background: rgba(255,255,255,0.98);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 body .yali_header__element--nav {
   flex: auto;
@@ -78,15 +100,8 @@ body .yali_header__element--logo img {
   width: auto;
   height: 100%;
 }
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body p {
-  font-family: garvis-pro, serif;
-/* font weights - 400 and 700 */
-  font-weight: 400;
+body .cart-link__bubble--visible {
+  background-color: #de0026 !important;
 }
 body .yali_footer {
   padding: 94px;
@@ -102,11 +117,10 @@ body .yali_footer__newsletter {
 body .yali_footer__newsletter .section-header {
   margin-bottom: 0;
 }
-body .yali_footer__newsletter .section-header h1,
 body .yali_footer__newsletter .section-header h2 {
   font-family: garvis-pro, serif;
-/* font weights - 400 and 700 */
   font-weight: 400;
+  font-size: 1.6rem;
 }
 body .yali_footer__newsletter .section-subheading {
   width: 400px;
@@ -124,6 +138,9 @@ body .yali_footer__newsletter form input {
 }
 body .yali_footer__newsletter form input#Email {
   font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
 /* font weights - 400 and 700 */
   font-style: normal;
 }
@@ -161,6 +178,9 @@ body .yali_footer__social li a {
 }
 body .yali_footer__copyright {
   font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
 /* font weights - 400 and 700 */
   margin-top: 50px;
   text-align: center;
@@ -173,12 +193,12 @@ body .yali_footer__copyright {
 }
 .yali_banner__video {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
   min-width: 100%;
   min-height: 100%;
 }
@@ -187,6 +207,10 @@ body .yali_footer__copyright {
   bottom: 0;
   right: 0;
   padding: 20px;
+}
+.yali_banner__video-controls #yali_play,
+.yali_banner__video-controls #yali_volume-on {
+  display: none;
 }
 .yali_featured-products__shop-all {
   display: block;
@@ -209,16 +233,48 @@ body .yali_footer__copyright {
   background: #de0026;
 }
 .yali_featured-products__carousel {
+  position: relative;
   padding-left: 0;
   white-space: nowrap;
-  overflow-x: scroll;
 }
 .yali_featured-products__carousel ul {
+  width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+.yali_featured-products__carousel ul li {
+  margin-bottom: 0;
 }
 .yali_featured-products__carousel button {
   display: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -moz-transform: translateY(-50%) rotate(-45deg);
+  -o-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+  transition: opacity 0.2s ease-in-out;
+}
+.yali_featured-products__carousel button#yali_featured-products__scroll--right {
+  width: 40px;
+  height: 40px;
+  right: 30px;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+.yali_featured-products__carousel button#yali_featured-products__scroll--left {
+  width: 40px;
+  height: 40px;
+  left: 30px;
+  border-left: 5px solid #fff;
+  border-top: 5px solid #fff;
+}
+.yali_featured-products__carousel button.hidden {
+  opacity: 0;
+}
+.yali_featured-products__carousel button:focus {
+  outline: none;
 }
 .yali_featured-products__product {
   list-style: none;
@@ -250,19 +306,24 @@ body .yali_footer__copyright {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
-.yali_featured-collection__title h1,
+.yali_featured-collection__title h1 {
+  color: #f1f0f5;
+  margin-bottom: 0;
+}
 .yali_featured-collection__title h2 {
   color: #f1f0f5;
+  font-style: italic;
 }
 .yali_mission-statement__copy {
-  margin: 188px auto 0;
+  margin: 94px auto 0;
   width: 90%;
   max-width: 600px;
 }
 .yali_mission-statement__image {
   display: block;
-  margin: 94px auto 188px;
+  margin: 94px auto;
   width: 90%;
   max-width: 300px;
   border-radius: 100%;
