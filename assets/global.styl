@@ -31,6 +31,38 @@ body
 		white-space nowrap
 		transition .2s all ease-in-out
 		
+		&.mobile
+			display none
+			overflow hidden
+			padding 10px 0 10px 10px !important
+			
+			.yali_header__element
+				&--logo
+					width 100px
+					flex auto !important
+					margin-right auto
+					text-align left !important
+					
+					img
+						width auto
+						height 100%
+				
+				&--menus
+					display flex
+					flex auto !important
+					margin-left auto
+					white-space nowrap
+					overflow-x scroll
+					overflow-y hidden
+
+				&--nav
+					flex auto
+					margin-right 20px
+					
+					ul
+						position relative !important
+						text-align left !important
+		
 		&.minimized
 			height 60px
 			padding 10px
@@ -59,6 +91,27 @@ body
 					li
 						display inline-block
 						margin 0 10px
+						
+						&.dropdown
+							position relative
+							
+							&:hover ul
+								display block !important
+							
+							ul
+								display none
+								top 21px !important
+								left 0 !important
+								-webkit-transform none
+								-moz-transform none
+								-o-transform none
+								transform none
+								background rgba(255,255,255,.8)
+								padding-bottom 5px
+								border-radius 2px
+								
+								li
+									display block !important
 						
 						a
 							interactiveCopy(700, $black, 10pt)
@@ -108,7 +161,8 @@ body
 					headerFont(400,1.6rem)
 			
 			.section-subheading
-				width 400px
+				width 100%
+				max-width 400px
 				margin auto
 			
 			hr.hr--small
@@ -137,7 +191,7 @@ body
 		&__social
 			list-style none
 			text-align center
-			margin-bottom 10px
+			margin 0 auto 20px
 			
 			li
 				display inline-block
@@ -145,8 +199,29 @@ body
 				
 				a
 					interactiveCopy(700, $black, 10pt)
+				
+				i
+					font-size 1.2rem
 		
 		&__copyright
 			copyFont(400)
-			margin-top 50px
+			margin 50px auto 0
 			text-align center
+
+@media all and (max-width:768px)
+	body
+		&.template-index
+			padding-top 60px !important
+			
+	.yali_header
+		&.desktop
+			display none
+		
+		&.mobile
+			display flex !important
+			
+	.yali_footer
+		padding $verticalMarginsShort 0 !important
+		
+		&__copyright
+			width 78%

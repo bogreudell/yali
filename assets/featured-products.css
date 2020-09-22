@@ -54,3 +54,14 @@
 .yali_featured-products__product .yali_height-padding {
   padding-bottom: 166%;
 }
+@media all and (max-width: 768px) {
+  .yali_featured-products__carousel {
+    overflow-x: scroll;
+  }
+  .yali_featured-products__carousel ul {
+    overflow-x: scroll !important;
+  }
+  .yali_featured-products__product {
+    width: 66%;
+  }
+}

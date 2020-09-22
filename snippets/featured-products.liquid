@@ -1,17 +1,32 @@
+<!-- making sure this works -->
 <div class="yali_featured-products yali_homepage-section">
-	<a href="" class="yali_featured-products__shop-all">Shop All</a>
+	<a href="https://yalitribe.com/collections/all" class="yali_featured-products__shop-all">Shop All</a>
 	<div class="yali_featured-products__carousel">
 		<ul>
-		{% for product in collections[settings.featured-products].products limit:4 %}
-			<li id="yali_product--{{ product.id }}" class="yali_featured-products__product" style="background:url({{ product.featured_image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
-				<a href="{{ product.url }}">
+			<li class="yali_featured-products__product" style="background:url({{ collections[settings.featured-collection-one].image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
+				<a href="{{ collections[settings.featured-collection-one].url }}">
 				<div class="yali_height-padding">
 				</div>
 				</a>
 			</li>
-		{% endfor %}
+			<li class="yali_featured-products__product" style="background:url({{ collections[settings.featured-collection-two].image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
+				<a href="{{ collections[settings.featured-collection-two].url }}">
+				<div class="yali_height-padding">
+				</div>
+				</a>
+			</li>
+			<li class="yali_featured-products__product" style="background:url({{ collections[settings.featured-collection-three].image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
+				<a href="{{ collections[settings.featured-collection-three].url }}">
+				<div class="yali_height-padding">
+				</div>
+				</a>
+			</li>
+			<li class="yali_featured-products__product" style="background:url({{ collections[settings.featured-collection-four].image | product_img_url: 'original' }}) center center no-repeat; background-size:cover;">
+				<a href="{{ collections[settings.featured-collection-four].url }}">
+				<div class="yali_height-padding">
+				</div>
+				</a>
+			</li>
 		</ul>
-		<button id="yali_featured-products__scroll--left" class="hidden"><!-- draw with css --></button>
-		<button id="yali_featured-products__scroll--right"><!-- draw with css --></button>
 	</div>
 </div>

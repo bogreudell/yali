@@ -43,12 +43,42 @@
     ]
   },
   {
-    "name": "Featured Products",
+    "name": "Featured Collection 1",
     "settings": [
       {
         "type": "collection",
-        "id": "featured-products",
-        "label": "Featured Products"
+        "id": "featured-collection-one",
+        "label": "Featured Collection 1"
+      } 
+    ]
+  },
+  {
+    "name": "Featured Collection 2",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "featured-collection-two",
+        "label": "Featured Collection 2"
+      } 
+    ]
+  },
+  {
+    "name": "Featured Collection 3",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "featured-collection-three",
+        "label": "Featured Collection 3"
+      } 
+    ]
+  },
+  {
+    "name": "Featured Collection 4",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "featured-collection-four",
+        "label": "Featured Collection 4"
       } 
     ]
   },
@@ -68,7 +98,7 @@
     ]
   },
   {
-    "name": "Featured Collection",
+    "name": "Featured Collection Banner",
     "settings": [
       {
         "type": "collection",
