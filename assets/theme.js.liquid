@@ -3716,7 +3716,18 @@ function horizontalProductScroll(){
 	});
 }
 
+function navDropdownsMobile(){
+	var $dropDownTrigger = $('.yali_header.mobile .dropdown');
+
+	$dropDownTrigger.on('click',function(){
+		$(this).find('ul').toggleClass('expanded');
+	});
+}
+
 $(document).ready(function(){
+	// modify dropdown menus on mobile
+	navDropdownsMobile();
+
 	// minimize header on page scroll
 	minimizeHeader();
 

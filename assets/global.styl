@@ -31,6 +31,15 @@ body
 		white-space nowrap
 		transition .2s all ease-in-out
 		
+		&.desktop
+			.yali_header__element
+				&--nav
+					ul
+						li
+							&.dropdown
+								&:hover ul
+									display block !important						
+		
 		&.mobile
 			display none
 			overflow hidden
@@ -59,7 +68,7 @@ body
 					flex auto
 					margin-right 20px
 					
-					ul
+					&>ul
 						position relative !important
 						text-align left !important
 		
@@ -94,9 +103,6 @@ body
 						
 						&.dropdown
 							position relative
-							
-							&:hover ul
-								display block !important
 							
 							ul
 								display none
@@ -220,6 +226,31 @@ body
 		&.mobile
 			display flex !important
 			
+			.yali_header__element
+				&--nav
+					ul
+						li
+							&.dropdown
+								position relative
+								
+								ul.expanded
+									position relative !important
+									top 0 !important
+									left 0 !important
+									display inline-block !important
+									padding 0
+									
+									&:before
+										content ':'
+										font-size 1rem
+									
+									li
+										display inline-block !important
+										margin 0 5px
+										
+										a
+											font-size 0.75rem
+										
 	.yali_footer
 		padding $verticalMarginsShort 0 !important
 		
