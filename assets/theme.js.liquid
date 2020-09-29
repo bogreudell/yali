@@ -3615,8 +3615,12 @@ function minimizeHeader() {
 	$(window).scroll(function(){
 		if ( $(window).scrollTop() > 0 ) { 
 			$header.addClass('minimized');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"]').attr('style','top: 15px !important');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList').attr('style','top:45px !important');
 		} else {
 			$header.removeClass('minimized');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"]').attr('style','');
+			$('	.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList').attr('style','');
 		}
 	});
 }

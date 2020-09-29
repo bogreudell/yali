@@ -3,6 +3,79 @@
 body {
   font-size: 62.5%;
   background: #f1f0f5;
+/* find a better place for this */
+}
+body .rte h1::after,
+body .rte .h1::after,
+body .rte h2::after,
+body .rte .h2::after {
+  display: none !important;
+}
+body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] {
+  top: 25px !important;
+  right: 25px !important;
+  left: auto !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -o-transform: none !important;
+  transform: none !important;
+  transition: 0.2s top ease-in-out !important;
+}
+body .BOLD-mc-picker > .currentCurrency {
+  width: 50px !important;
+  padding: 0 !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 10pt;
+/* font weights - 500 and 700 */
+}
+body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList {
+  bottom: initial !important;
+  top: 55px !important;
+  background: 0 !important;
+  border: 0 !important;
+  height: auto !important;
+  line-height: initial !important;
+  max-height: none !important;
+  transition: 0.2s top ease-in-out !important;
+}
+body .BOLD-mc-picker > .currentCurrency > .flag,
+body .BOLD-mc-picker > .currencyList > .option > .flag {
+  display: none !important;
+}
+body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currentCurrency > .chevron > svg {
+  -webkit-transform: rotate(180deg) !important;
+  -moz-transform: rotate(180deg) !important;
+  -o-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
+}
+body body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker.open > .currentCurrency > .chevron > svg {
+  -webkit-transform: rotate(0) !important;
+  -moz-transform: rotate(0) !important;
+  -o-transform: rotate(0) !important;
+  transform: rotate(0) !important;
+}
+body .BOLD-mc-picker > .currencyList > .option {
+  display: block !important;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.98);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  line-height: initial !important;
+  height: auto !important;
+  width: auto !important;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 10pt;
+/* font weights - 500 and 700 */
 }
 body h1 {
   font-family: garvis-pro, serif;
@@ -25,7 +98,7 @@ body.template-index {
   padding-top: 80px;
 }
 body #CartDrawer {
-  z-index: 100 !important;
+  z-index: 100000 !important;
 }
 body .yali_header {
   display: flex;
@@ -82,6 +155,9 @@ body .yali_header.minimized {
   -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
   box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
+body .yali_header.minimized .yali_header__element--nav ul li.dropdown ul {
+  padding-top: 42px !important;
+}
 body .yali_header__element--nav {
   flex: auto;
   position: relative;
@@ -107,18 +183,22 @@ body .yali_header__element--nav ul li.dropdown {
 }
 body .yali_header__element--nav ul li.dropdown ul {
   display: none;
-  top: 21px !important;
+  top: 0 !important;
   left: 0 !important;
   -webkit-transform: none;
   -moz-transform: none;
   -o-transform: none;
   transform: none;
-  background: rgba(255,255,255,0.8);
-  padding-bottom: 5px;
   border-radius: 2px;
+  padding-top: 51px !important;
 }
 body .yali_header__element--nav ul li.dropdown ul li {
   display: block !important;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.98);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 body .yali_header__element--nav ul li a {
   font-family: brother-1816, sans-serif;
@@ -141,7 +221,7 @@ body .yali_header__element--nav:last-of-type {
   text-align: right;
 }
 body .yali_header__element--nav:last-of-type ul {
-  right: 10px;
+  right: 75px;
 }
 body .yali_header__element--logo {
   flex: auto;
@@ -246,31 +326,58 @@ body .yali_footer__copyright {
   body.template-index {
     padding-top: 60px !important;
   }
+  body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] {
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    top: initial !important;
+  }
+  body .BOLD-mc-picker > .currentCurrency {
+    width: 60px !important;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12) !important;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12) !important;
+  }
+  body .BOLD-mc-picker > .currentCurrency span.name {
+    padding-left: 10px !important;
+  }
+  body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList {
+    bottom: 35px !important;
+    top: initial !important;
+  }
+  .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker.open > .currentCurrency > .chevron > svg {
+    -webkit-transform: rotate(0) !important;
+    -moz-transform: rotate(0) !important;
+    -o-transform: rotate(0) !important;
+    transform: rotate(0) !important;
+  }
   .yali_header.desktop {
     display: none;
   }
   .yali_header.mobile {
     display: flex !important;
   }
-  .yali_header.mobile .yali_header__element--nav ul li.dropdown {
+  .yali_header.mobile .yali_header__element--nav:last-of-type ul {
+    right: 0 !important;
+  }
+  .yali_header.mobile .yali_header__element--nav li.dropdown {
     position: relative;
   }
-  .yali_header.mobile .yali_header__element--nav ul li.dropdown ul.expanded {
+  .yali_header.mobile .yali_header__element--nav li.dropdown ul.expanded {
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
     display: inline-block !important;
     padding: 0;
   }
-  .yali_header.mobile .yali_header__element--nav ul li.dropdown ul.expanded:before {
+  .yali_header.mobile .yali_header__element--nav li.dropdown ul.expanded:before {
     content: ':';
     font-size: 1rem;
   }
-  .yali_header.mobile .yali_header__element--nav ul li.dropdown ul.expanded li {
+  .yali_header.mobile .yali_header__element--nav li.dropdown ul.expanded li {
     display: inline-block !important;
     margin: 0 5px;
   }
-  .yali_header.mobile .yali_header__element--nav ul li.dropdown ul.expanded li a {
+  .yali_header.mobile .yali_header__element--nav li.dropdown ul.expanded li a {
     font-size: 0.75rem;
   }
   .yali_footer {
