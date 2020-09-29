@@ -65,6 +65,7 @@
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
+{%- render 'bold-common' -%}
 
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
@@ -252,5 +253,6 @@
   <ul hidden>
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
   </ul>
+{%- render 'bold-currency-converter' -%}
 </body>
 </html>

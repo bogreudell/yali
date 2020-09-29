@@ -1,5 +1,24 @@
 {
   "current": {
+    "show_homepage_video": true,
+    "carousel_video_hd_streaming_1": "https:\/\/player.vimeo.com\/external\/461433803.sd.mp4?s=894ada4f52157d73d34ca799519d0fced97bfaab&profile_id=165",
+    "carousel_video_hd_streaming_2": "",
+    "carousel_video_sd_streaming": "",
+    "carousel_video_low_def_streaming": "",
+    "show_mobile_homepage_video": true,
+    "carousel_mobile_video_hd_streaming_1": "https:\/\/player.vimeo.com\/external\/408040506.hd.mp4?s=ed310aba3fa002ca3c1a6d44123e87c11b8d6071&profile_id=175",
+    "carousel_mobile_video_hd_streaming_2": "",
+    "carousel_mobile_video_sd_streaming": "",
+    "carousel_mobile_video_low_def_streaming": "",
+    "featured-collection-one": "pyjama-palazzo",
+    "featured-collection-two": "blazers-2",
+    "featured-collection-three": "robes-1",
+    "featured-collection-four": "puffer-blazers",
+    "executive-summary-header": "We Are YALI",
+    "executive-summary-copy": "Inspired by the paintings of the Italian Old Masters. Our garments are crafted with traditional techniques and materials sourced from their local communities, such as raw silks from Suzhou and organic cottons from Nankeen.",
+    "featured-collection": "the-classics",
+    "mission-statement": "<p>Pia Zanardi, founder and creative director, draws inspiration from her Italian heritage, her studies of the shapes and techniques of ancient Chinese artisans, and the ideas and aesthetics she&rsquo;s absorbed from her global travels. Now based in New York City, she garners inspiration from her past and present. In each piece of clothing lives a little bit of her great grandfather&rsquo;s smoking tuxedo, her Nonna's couture gowns, her father's tailored suits, and the colours of the Po River where she spent her childhood summers. She honors these ideas through YALI.<\/p>",
+    "mission-statement-image": "shopify:\/\/shop_images\/01230009.jpg",
     "color_body_bg": "#ffffff",
     "color_headings": "#222323",
     "color_body_text": "#222323",
@@ -70,18 +89,8 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/57cd83de-871f-4792-8d1d-8b29b008fe01_0febaa03-6647-4959-9ce5-d699115dd599.png",
-          "logo-inverted": "",
-          "logo_max_width": "100",
-          "search": "page",
           "main_menu_link_list": "main-menu",
-          "drawer_bottom_link_list": "",
-          "drawer_search_enable": false,
-          "show_announcement": true,
-          "home_page_only": false,
-          "text": "15% of our sales this month are being donated to support the National Bail Out Fund. USA Free Shipping.",
-          "link": "shopify:\/\/pages\/blacklivesmatter",
-          "color_bg": "#fffaf4",
-          "color_text": "#4a4a4a"
+          "secondary_menu_link_list": "secondary-menu"
         }
       },
       "slideshow": {
@@ -303,9 +312,6 @@
         "header": {
           "type": "header",
           "settings": {
-            "show_announcement": true,
-            "color_bg": "#1c1d1d",
-            "color_text": "#ffffff"
           }
         },
         "slideshow": {
@@ -481,12 +487,7 @@
         "header": {
           "type": "header",
           "settings": {
-            "logo_max_width": "260",
-            "search": "modal",
-            "main_menu_link_list": "main-menu",
-            "show_announcement": false,
-            "color_bg": "#290c49",
-            "color_text": "#ffffff"
+            "main_menu_link_list": "main-menu"
           }
         },
         "footer": {

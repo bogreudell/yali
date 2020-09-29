@@ -837,6 +837,7 @@ var ajaxCart = (function(module, $) {
 
   loadCart = function() {
     $body.addClass('drawer--is-loading');
+    // $('body').addClass('drawer--is-loading');
     ShopifyAPI.getCart(cartUpdateCallback);
   };
 
@@ -3604,3 +3605,144 @@ var afterResize = (function () {
     t[uniqueId] = setTimeout(callback, ms);
   };
 })();
+
+/* Custom functions added by Daniel Bögre Udell (@bogreudell) */
+
+function minimizeHeader() {
+	var $header = $('header.yali_header.desktop'),
+		$headerOffset = $('.yali_banner__video').offset().top;
+
+	$(window).scroll(function(){
+		if ( $(window).scrollTop() > 0 ) { 
+			$header.addClass('minimized');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"]').attr('style','top: 15px !important');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList').attr('style','top:45px !important');
+		} else {
+			$header.removeClass('minimized');
+			$('.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"]').attr('style','');
+			$('	.BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] > .BOLD-mc-picker > .currencyList').attr('style','');
+		}
+	});
+}
+
+function videoControls(){
+	var $videoWrap = $('.yali_banner__video'),
+		$video = $videoWrap.get(0),
+		$buttons = $('.yali_banner__video-controls--wrapper button'),
+		$play = $('#yali_play'),
+		$pause = $('#yali_pause'),
+		$volumeOn = $('#yali_volume-on'),
+		$volumeOff = $('#yali_volume-off'),
+		$videoOffset = $videoWrap.offset().top;
+
+	$buttons.on('click', function(){
+		$(this).hide();
+	});
+
+	$play.on('click', function(){
+		$video.play();
+		$pause.show();
+	});
+
+	$pause.on('click', function(){
+		$video.pause();
+		$play.show();
+	});
+
+	$volumeOff.on('click', function(){
+		$videoWrap.prop('muted', false);
+		$volumeOn.show();
+	});
+
+	$volumeOn.on('click', function(){
+		$videoWrap.prop('muted', true);
+		$volumeOff.show();
+	})
+
+	$(window).scroll(function(){
+		if ( $(window).scrollTop() > $videoOffset ) { 
+			$videoWrap.prop('muted', true);
+			$volumeOff.show();
+			$volumeOn.hide();
+		}
+	});
+}
+
+function horizontalProductScroll(){
+	var $scrollLeft = $('#yali_featured-products__scroll--left'),
+		$scrollRight = $('#yali_featured-products__scroll--right'),
+		$featuredProducts = $('.yali_featured-products__carousel ul');
+		$outerWidth = $featuredProducts.outerWidth(),
+        $scrollWidth = $featuredProducts[0].scrollWidth; 
+        
+    function scrollRight() {
+		$featuredProducts.animate({
+			scrollLeft: '+=' + $scrollWidth
+		}, 'slow');
+    }
+
+    function scrollLeft() {
+		$featuredProducts.animate({
+			scrollLeft: '-=' + $scrollWidth
+		}, 'slow');
+    }
+
+	$scrollRight.click(function() {
+		event.preventDefault();
+
+		var $scrollLeftStatus = $featuredProducts.scrollLeft();
+
+		$scrollLeft.removeClass('hidden');
+
+		if ( $scrollLeftStatus === $scrollWidth - $outerWidth ) {
+			scrollLeft();
+		} else {
+			scrollRight();
+		}
+	});
+
+	$scrollLeft.click(function() {
+		event.preventDefault();
+
+		var $scrollLeftStatus = $featuredProducts.scrollLeft();
+
+		$scrollRight.removeClass('hidden');
+
+		if ( $scrollLeftStatus === 0 ) {
+			scrollRight();
+		} else {
+			scrollLeft();
+		}
+	});
+
+	$(window).resize(function(){
+		$scrollWidth = $featuredProducts[0].scrollWidth;
+	});
+}
+
+function navDropdownsMobile(){
+	var $dropDownTrigger = $('.yali_header.mobile .dropdown');
+
+	$dropDownTrigger.on('click',function(){
+		$(this).find('ul').toggleClass('expanded');
+	});
+}
+
+$(document).ready(function(){
+	// modify dropdown menus on mobile
+	navDropdownsMobile();
+
+	// minimize header on page scroll
+	minimizeHeader();
+
+	// run certain functions on homepage only
+	if ( $('body').hasClass('template-index') ) {
+		// active video controls on homepage
+		videoControls();
+
+		// activate featured products scroll - do we need this?
+		// horizontalProductScroll();
+	} else {
+		console.log('video controls disabled on this page');
+	}
+});
