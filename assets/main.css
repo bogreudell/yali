@@ -286,6 +286,9 @@ body .yali_footer__copyright {
   height: 75vh;
   overflow: hidden;
 }
+.yali_banner__wrapper#mobile {
+  display: none;
+}
 .yali_banner__video {
   position: absolute;
   bottom: 0;
@@ -306,6 +309,17 @@ body .yali_footer__copyright {
 .yali_banner__video-controls #yali_play,
 .yali_banner__video-controls #yali_volume-on {
   display: none;
+}
+.yali_banner__video-controls button:focus {
+  outline: none !important;
+}
+@media all and (max-width: 768px) {
+  .yali_banner__wrapper#desktop {
+    display: none !important;
+  }
+  .yali_banner__wrapper#mobile {
+    display: block !important;
+  }
 }
 .yali_featured-products__shop-all {
   display: block;

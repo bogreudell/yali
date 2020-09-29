@@ -4,6 +4,9 @@
   height: 75vh;
   overflow: hidden;
 }
+.yali_banner__wrapper#mobile {
+  display: none;
+}
 .yali_banner__video {
   position: absolute;
   bottom: 0;
@@ -24,4 +27,15 @@
 .yali_banner__video-controls #yali_play,
 .yali_banner__video-controls #yali_volume-on {
   display: none;
+}
+.yali_banner__video-controls button:focus {
+  outline: none !important;
+}
+@media all and (max-width: 768px) {
+  .yali_banner__wrapper#desktop {
+    display: none !important;
+  }
+  .yali_banner__wrapper#mobile {
+    display: block !important;
+  }
 }

@@ -1,6 +1,6 @@
 [
   {
-    "name": "Banner Video",
+    "name": "Desktop Banner Video",
     "settings": [
       {
         "type": "checkbox",
@@ -30,13 +30,44 @@
       },
       {
         "type": "image",
-        "id": "carousel-video-thumbnail.jpg",
+        "id": "carousel_video_thumbnail.jpg",
         "label": "Loading Placeholder Image",
         "max-width": 2000
+      }
+    ]
+  },
+  {
+    "name": "Mobile Banner Video",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_mobile_homepage_video",
+        "label": "Show?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "carousel_mobile_video_hd_streaming_1",
+        "label": "Vimeo Highest Def Streaming Link"
+      },
+      {
+        "type": "text",
+        "id": "carousel_mobile_video_hd_streaming_2",
+        "label": "Vimeo High Def Streaming Link"
+      },
+      {
+        "type": "text",
+        "id": "carousel_mobile_video_sd_streaming",
+        "label": "Vimeo Standard Def Streaming Link"
+      },
+      {
+        "type": "text",
+        "id": "carousel_mobile_video_low_def_streaming",
+        "label": "Vimeo Low Def Streaming Link"
       },
       {
         "type": "image",
-        "id": "carousel-video-mobile-thumbnail.jpg",
+        "id": "carousel_mobile_video_thumbnail.jpg",
         "label": "Mobile Still Image",
         "max-width": 2000
       }
