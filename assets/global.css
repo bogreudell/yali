@@ -18,6 +18,7 @@ body .BOLD-mc-picker-mnt[data-picker-location="bottom-middle"] {
   -o-transform: none !important;
   transform: none !important;
   transition: 0.2s top ease-in-out !important;
+  height: 40px !important;
 }
 body .BOLD-mc-picker > .currentCurrency {
   width: 50px !important;
@@ -262,6 +263,7 @@ body .yali_footer__copyright {
     right: 0 !important;
     left: auto !important;
     top: initial !important;
+    height: initial !important;
   }
   body .BOLD-mc-picker > .currentCurrency {
     width: 60px !important;
