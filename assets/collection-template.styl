@@ -1,0 +1,46 @@
+body
+	&.template-collection
+		.wrapper
+			max-width none
+			width 100%
+			padding 60px 0 0
+			
+			.grid__item
+				width calc(100%/3)
+				padding 0
+				border 1px solid $white
+				position relative
+				
+				&:hover
+					.yali_collection
+						&__product
+							&--primary
+								display none
+							
+							&--rollover
+								display block
+				
+				.yali_collection
+					&__product
+						&--primary,
+						&--rollover
+							width 100%
+							padding-bottom 133%
+							background #fff
+						
+						&--rollover
+							display none
+						
+						&--meta
+							position absolute
+							bottom 0
+							width 100%
+							
+							&--title
+								float left
+							
+							&--price
+								float right 
+								
+							.clear
+								clear both
