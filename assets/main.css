@@ -560,3 +560,43 @@ body .yali_footer__copyright {
 .yali_mission-statement__image .yali_height-padding {
   padding-bottom: 100%;
 }
+body.template-collection .wrapper {
+  max-width: none;
+  width: 100%;
+  padding: 60px 0 0;
+}
+body.template-collection .wrapper .grid__item {
+  width: calc(100% / 3);
+  padding: 0;
+  border: 1px solid #f1f0f5;
+  position: relative;
+}
+body.template-collection .wrapper .grid__item:hover .yali_collection__product--primary {
+  display: none;
+}
+body.template-collection .wrapper .grid__item:hover .yali_collection__product--rollover {
+  display: block;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--primary,
+body.template-collection .wrapper .grid__item .yali_collection__product--rollover {
+  width: 100%;
+  padding-bottom: 133%;
+  background: #fff;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--rollover {
+  display: none;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--meta {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--meta--title {
+  float: left;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--meta--price {
+  float: right;
+}
+body.template-collection .wrapper .grid__item .yali_collection__product--meta .clear {
+  clear: both;
+}
