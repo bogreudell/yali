@@ -1,0 +1,121 @@
+body
+	&.template-product
+		.yali_photo
+			float left
+			width 80%
+			height 100px
+			background blue
+
+		.yali_thumbnails
+			float left
+			width 20%
+			
+			img
+				width 100%
+				height auto
+				box-sizing border-box
+				border-right 2px solid $white
+				margin-bottom -2px
+		
+		.clear
+			clear both
+		
+		.product-single__meta
+			.product-single__description
+				margin 30px 0 50px
+				
+				p, ul li
+					copyFont(400)
+				
+				p:last-of-type
+					text-align center
+				
+			form[action="/cart/add"]
+				.product-single__add-to-cart
+					button
+						background $red
+						interactiveCopy(700, $white, 10pt)
+						border 0
+			
+			.social-sharing
+				a
+					background $red
+					interactiveCopy(700, $white, 10pt)
+		
+		#shopify-section-related-products
+			hr
+				margin $verticalMarginsShort auto 50px
+				
+			.grid
+				margin-left 0
+				
+				.grid-uniform
+					margin-left 0
+
+				.grid__item
+					padding-left 0
+					
+					.section-header
+						text-align center
+					
+					.grid__item.grid-product
+						width calc(100%/3)
+						padding 0
+						border 1px solid $white
+						position relative
+						
+						&:hover
+							.yali_collection
+								&__product
+									&--primary
+										display none
+									
+									&--rollover
+										display block
+						
+						.yali_collection
+							&__product
+								&--primary,
+								&--rollover
+									width 100%
+									padding-bottom 133%
+									background #fff
+								
+								&--rollover
+									display none
+								
+								&--meta
+									position absolute
+									bottom 0
+									width 100%
+									
+									&--title
+										float left
+									
+									&--price
+										float right 
+										
+									.clear
+										clear both
+
+@media all and (max-width:768px)
+	body
+		&.template-product
+			.yali_photo
+				display none
+			
+			.yali_thumbnails
+				width 100%
+				white-space nowrap
+				overflow-x scroll
+				overflow-y hidden
+				
+				img
+					width 80%
+					display inline-block
+					vertical-align top
+			
+			#shopify-section-related-products
+				.grid
+					.grid__item.grid-product
+						width 100%
