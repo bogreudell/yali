@@ -611,22 +611,125 @@ body.template-collection .wrapper .grid-uniform .grid__item .yali_collection__pr
 body.template-collection .wrapper .grid-uniform .grid__item .yali_collection__product--meta .clear {
   clear: both;
 }
-body.template-collection .wrapper .pagination {
+body.template-product .yali_photo {
+  float: left;
+  width: 80%;
+  height: 100px;
+  background: #00f;
+}
+body.template-product .yali_thumbnails {
+  float: left;
+  width: 20%;
+}
+body.template-product .yali_thumbnails img {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-right: 2px solid #f1f0f5;
+  margin-bottom: -2px;
+}
+body.template-product .clear {
+  clear: both;
+}
+body.template-product .product-single__meta .product-single__description {
+  margin: 30px 0 50px;
+}
+body.template-product .product-single__meta .product-single__description p,
+body.template-product .product-single__meta .product-single__description ul li {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+/* font weights - 400 and 700 */
+}
+body.template-product .product-single__meta .product-single__description p:last-of-type {
+  text-align: center;
+}
+body.template-product .product-single__meta form[action="/cart/add"] .product-single__add-to-cart button {
+  background: #de0026;
   font-family: brother-1816, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #000;
+  color: #f1f0f5;
+  font-size: 10pt;
+/* font weights - 500 and 700 */
+  border: 0;
+}
+body.template-product .product-single__meta .social-sharing a {
+  background: #de0026;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f1f0f5;
   font-size: 10pt;
 /* font weights - 500 and 700 */
 }
-body.template-collection .wrapper .pagination .current {
-  color: #de0026;
+body.template-product #shopify-section-related-products hr {
+  margin: 94px auto 50px;
+}
+body.template-product #shopify-section-related-products .grid {
+  margin-left: 0;
+}
+body.template-product #shopify-section-related-products .grid .grid-uniform {
+  margin-left: 0;
+}
+body.template-product #shopify-section-related-products .grid .grid__item {
+  padding-left: 0;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .section-header {
+  text-align: center;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product {
+  width: calc(100% / 3);
+  padding: 0;
+  border: 1px solid #f1f0f5;
+  position: relative;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product:hover .yali_collection__product--primary {
+  display: none;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product:hover .yali_collection__product--rollover {
+  display: block;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--primary,
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--rollover {
+  width: 100%;
+  padding-bottom: 133%;
+  background: #fff;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--rollover {
+  display: none;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--meta {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--meta--title {
+  float: left;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--meta--price {
+  float: right;
+}
+body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--meta .clear {
+  clear: both;
 }
 @media all and (max-width: 768px) {
-  body.template-collection .wrapper {
-    padding: 10px 0 0;
+  body.template-product .yali_photo {
+    display: none;
   }
-  body.template-collection .wrapper .grid-uniform .grid__item {
+  body.template-product .yali_thumbnails {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  body.template-product .yali_thumbnails img {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  body.template-product #shopify-section-related-products .grid .grid__item.grid-product {
     width: 100%;
   }
 }
