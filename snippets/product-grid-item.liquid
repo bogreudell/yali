@@ -5,8 +5,8 @@
   'for product in collection.products' in collection.liquid.
 
 {% endcomment %}
-<a href="{{ product.url | within: collection }}">
 	<div class="grid__item grid-product{% if sold_out %} is-sold-out{% endif %}">
+		<a href="{{ product.url | within: collection }}">
 		<div class="yali_collection__product--primary" style="background:url({{ product.images[0] | img_url: 'original' }}) center center no-repeat; background-size:cover;"></div>
 		<div class="yali_collection__product--rollover" style="background:url({{ product.images[1] | img_url: 'original' }}) center center no-repeat; background-size:cover;"></div>
 		<div class="yali_collection__product--meta">
@@ -18,5 +18,5 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		</a>
 	</div>
-</a>
