@@ -3728,12 +3728,26 @@ function navDropdownsMobile(){
 	});
 }
 
+function productThumbnails(){
+	var $mainProductImage = $('.yali_photo img'),
+		$productThumbnails = $('.yali_thumbnails img');
+
+	// when user clicks thumbnail image,
+	$productThumbnails.on('click', function(){
+		// grab thumbnail image url
+		var $thumbnailUrl = $(this).attr('src');
+
+		// replace splash image url with that url
+		$mainProductImage.attr('src', $thumbnailUrl);
+	});
+}
+
 $(document).ready(function(){
 	// modify dropdown menus on mobile
 	navDropdownsMobile();
 
 	// minimize header on page scroll
-	minimizeHeader();
+	// minimizeHeader();
 
 	// run certain functions on homepage only
 	if ( $('body').hasClass('template-index') ) {
@@ -3742,7 +3756,14 @@ $(document).ready(function(){
 
 		// activate featured products scroll - do we need this?
 		// horizontalProductScroll();
+		minimizeHeader();
 	} else {
 		console.log('video controls disabled on this page');
+	}
+
+	if ( $('body').hasClass('template-product') ) {
+		console.log('product thumbnails running');
+
+		productThumbnails();
 	}
 });

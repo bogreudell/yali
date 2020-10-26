@@ -3,8 +3,6 @@ body
 		.yali_photo
 			float left
 			width 80%
-			height 100px
-			background blue
 
 		.yali_thumbnails
 			float left
@@ -16,6 +14,11 @@ body
 				box-sizing border-box
 				border-right 2px solid $white
 				margin-bottom -2px
+				transition .2s opacity ease-in-out
+				
+				&:hover
+					cursor pointer
+					opacity .9
 		
 		.clear
 			clear both
@@ -88,7 +91,10 @@ body
 									position absolute
 									bottom 0
 									width 100%
-									
+									interactiveCopy(700, $whiteBright, 10pt)
+									text-shadow 0 0 3px $blackLight
+									padding 10px 20px
+								
 									&--title
 										float left
 									
@@ -117,5 +123,6 @@ body
 			
 			#shopify-section-related-products
 				.grid
-					.grid__item.grid-product
-						width 100%
+					.grid__item
+						.grid__item.grid-product
+							width 100%
