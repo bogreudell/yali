@@ -12,9 +12,7 @@
         <!-- show only if images.count > 1 -->
         <div class="yali_thumbnails">
         {% for image in product.images %}
-            {% unless image contains featured_image %}
-              <img src="{{ image | img_url: 'original' }}" alt="">
-            {% endunless %}
+          <img src="{{ image | img_url: 'original' }}" alt="">
         {% endfor %}
         </div>
         <div class="yali_photo">
