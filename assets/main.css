@@ -644,6 +644,11 @@ body.template-product .yali_thumbnails img {
   box-sizing: border-box;
   border-right: 2px solid #f1f0f5;
   margin-bottom: -2px;
+  transition: 0.2s opacity ease-in-out;
+}
+body.template-product .yali_thumbnails img:hover {
+  cursor: pointer;
+  opacity: 0.9;
 }
 body.template-product .clear {
   clear: both;
