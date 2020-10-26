@@ -1,8 +1,6 @@
 body.template-product .yali_photo {
   float: left;
   width: 80%;
-  height: 100px;
-  background: #00f;
 }
 body.template-product .yali_thumbnails {
   float: left;
@@ -71,6 +69,8 @@ body.template-product #shopify-section-related-products .grid .grid__item .grid_
   position: absolute;
   bottom: 0;
   width: 100%;
+  text-shadow: 0 0 3px $blackLight;
+  padding: 10px 20px;
 }
 body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product .yali_collection__product--meta--title {
   float: left;
@@ -96,7 +96,7 @@ body.template-product #shopify-section-related-products .grid .grid__item .grid_
     display: inline-block;
     vertical-align: top;
   }
-  body.template-product #shopify-section-related-products .grid .grid__item.grid-product {
+  body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product {
     width: 100%;
   }
 }
