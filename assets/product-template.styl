@@ -24,6 +24,20 @@ body
 			clear both
 		
 		.product-single__meta
+			.single-option-radio
+				padding 0
+				background none
+				
+				label
+					background none
+					border 0
+					
+					&.disabled:hover
+						cursor auto
+					
+				input[type='radio']:checked+label
+					border 1px solid $black
+					
 			.product-single__description
 				margin 30px 0 50px
 				
