@@ -21,6 +21,20 @@ body.template-product .yali_thumbnails img:hover {
 body.template-product .clear {
   clear: both;
 }
+body.template-product .product-single__meta .single-option-radio {
+  padding: 0;
+  background: none;
+}
+body.template-product .product-single__meta .single-option-radio label {
+  background: none;
+  border: 0;
+}
+body.template-product .product-single__meta .single-option-radio label.disabled:hover {
+  cursor: auto;
+}
+body.template-product .product-single__meta .single-option-radio input[type='radio']:checked+label {
+  border: 1px solid $black;
+}
 body.template-product .product-single__meta .product-single__description {
   margin: 30px 0 50px;
 }

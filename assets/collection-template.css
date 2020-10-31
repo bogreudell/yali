@@ -31,7 +31,7 @@ body.template-collection .wrapper .grid-uniform .grid__item .yali_collection__pr
   position: absolute;
   bottom: 0;
   width: 100%;
-  text-shadow: 0 0 3px $blackLight;
+  background: rgba(255,255,255,0.65);
   padding: 10px 20px;
 }
 body.template-collection .wrapper .grid-uniform .grid__item .yali_collection__product--meta--title {
