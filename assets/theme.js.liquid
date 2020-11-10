@@ -3742,6 +3742,26 @@ function productThumbnails(){
 	});
 }
 
+function openSizeChart() {
+	var $popupTrigger = $('.product-single__meta').find('a:contains("Size Chart")'),
+		$popup = $('.product-single__sizes--background');
+
+	$popupTrigger.click(function(e){
+		e.preventDefault();
+
+		$popup.show();
+	});
+}
+
+function closeModule(){
+	var $close = $('.yali_close-module'),
+		$module = $('.yali_close-module').parent();
+
+	$close.click(function(){
+		$module.hide();
+	});
+}
+
 $(document).ready(function(){
 	// modify dropdown menus on mobile
 	navDropdownsMobile();
@@ -3765,5 +3785,7 @@ $(document).ready(function(){
 		console.log('product thumbnails running');
 
 		productThumbnails();
+		openSizeChart();
+		closeModule();
 	}
 });
