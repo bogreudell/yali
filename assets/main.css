@@ -5,6 +5,26 @@ body {
   background: #f1f0f5;
 /* find a better place for this */
 }
+body.announcement {
+  padding-top: 120px !important;
+}
+body.announcement #yali_mobile__trigger {
+  top: 57px;
+}
+body #yali_mobile__trigger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  font-size: 12pt;
+  color: #de0026;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+body #yali_mobile__trigger:focus {
+  outline: none;
+}
 body .rte h1::after,
 body .rte .h1::after,
 body .rte h2::after,
@@ -115,12 +135,16 @@ body .yali_header {
   white-space: nowrap;
   transition: 0.2s all ease-in-out;
 }
+body .yali_header.announcement {
+  top: 40px !important;
+}
 body .yali_header.desktop .yali_header__element--nav ul li.dropdown:hover ul {
   display: block !important;
 }
 body .yali_header.mobile {
   display: none;
-  overflow: hidden;
+  z-index: 1000;
+  overflow: visible;
   padding: 10px 0 10px 10px !important;
 }
 body .yali_header.mobile .yali_header__element--logo {
@@ -134,20 +158,48 @@ body .yali_header.mobile .yali_header__element--logo img {
   height: 100%;
 }
 body .yali_header.mobile .yali_header__element--menus {
-  display: flex;
-  flex: auto !important;
-  margin-left: auto;
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  padding: 20px;
+  background: rgba(255,255,255,0.98);
+  -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+  transition: 0.2s right ease-in-out;
+}
+body .yali_header.mobile .yali_header__element--menus.slide-in {
+  right: 0;
 }
 body .yali_header.mobile .yali_header__element--nav {
-  flex: auto;
   margin-right: 20px;
 }
 body .yali_header.mobile .yali_header__element--nav>ul {
   position: relative !important;
+  top: auto;
+  left: auto;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
   text-align: left !important;
+}
+body .yali_header.mobile .yali_header__element--nav>ul li {
+  display: block;
+  margin: 10px;
+}
+body .yali_header.mobile .yali_header__element--nav>ul li.dropdown ul {
+  position: relative;
+  padding: 0 !important;
+  display: block;
+}
+body .yali_header.mobile .yali_header__element--nav>ul li.dropdown ul li {
+  margin: 10px 0 10px 10px;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
 }
 body .yali_header.minimized {
   height: 60px;
@@ -157,7 +209,7 @@ body .yali_header.minimized {
   box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 body .yali_header.minimized .yali_header__element--nav ul li.dropdown ul {
-  padding-top: 42px !important;
+  padding-top: 42px;
 }
 body .yali_header__element--nav {
   flex: auto;
@@ -191,7 +243,7 @@ body .yali_header__element--nav ul li.dropdown ul {
   -o-transform: none;
   transform: none;
   border-radius: 2px;
-  padding-top: 51px !important;
+  padding-top: 51px;
 }
 body .yali_header__element--nav ul li.dropdown ul li {
   display: block !important;
@@ -387,6 +439,69 @@ body .yali_footer__copyright {
   }
   .yali_footer__copyright {
     width: 78%;
+  }
+}
+.yali_announcement {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px;
+  text-align: center;
+  background: #de0026;
+  border: 1px solid #de0026;
+}
+.yali_announcement__relativewrap {
+  position: relative;
+}
+.yali_announcement__relativewrap #yali_announcement__close {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  top: 50%;
+  left: 99%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #f1f0f5;
+  font-size: 12pt;
+}
+.yali_announcement__relativewrap #yali_announcement__close:focus {
+  outline: none;
+}
+.yali_announcement__link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f1f0f5;
+  font-size: 10pt;
+/* font weights - 500 and 700 */
+}
+.yali_announcement:hover {
+  background: #f1f0f5;
+  border-left: 0;
+  border-right: 0;
+}
+.yali_announcement:hover .yali_announcement__link {
+  color: #de0026;
+}
+.yali_announcement:hover .yali_announcement__relativewrap #yali_announcement__close {
+  color: #de0026;
+}
+@media all and (max-width: 768px) {
+  .yali_announcement__relativewrap #yali_announcement__close {
+    left: 90% !important;
+    font-size: 20pt;
+    width: 12.75%;
+    z-index: 10000000;
   }
 }
 .yali_banner__wrapper {

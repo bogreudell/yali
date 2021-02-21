@@ -3728,12 +3728,27 @@ function navDropdownsMobile(){
 	});
 }
 
+function announcementBanner(){
+	$('#yali_announcement__close').click(function(){
+		alert('rest i must');
+		// $('.yali_announcement').hide();
+		// $('body, .yali_header').removeClass('announcement');
+	});
+}
+
 $(document).ready(function(){
 	// modify dropdown menus on mobile
 	navDropdownsMobile();
 
 	// minimize header on page scroll
 	minimizeHeader();
+
+	// check if announcement exists
+	if ( $('body').hasClass('announcement') ){
+		console.log('announcement time');
+		// run announcement banner controls
+		// announcementBanner();
+	}
 
 	// run certain functions on homepage only
 	if ( $('body').hasClass('template-index') ) {

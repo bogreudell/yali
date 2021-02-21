@@ -2,6 +2,26 @@ body
 	font-size 62.5%
 	background $white
 	
+	&.announcement
+		padding-top 120px !important
+		
+		#yali_mobile__trigger
+			top 57px
+		
+	#yali_mobile__trigger
+		position fixed
+		top 20px
+		right 20px
+		z-index 1001
+		font-size 12pt
+		color $red
+		padding 0
+		border 0
+		background none
+		
+		&:focus
+			outline none
+	
 	/* find a better place for this */
 	.rte h1::after, .rte .h1::after, .rte h2::after, .rte .h2::after
 		display none !important
@@ -93,6 +113,9 @@ body
 		white-space nowrap
 		transition .2s all ease-in-out
 		
+		&.announcement
+			top 40px !important
+		
 		&.desktop
 			.yali_header__element
 				&--nav
@@ -104,7 +127,8 @@ body
 		
 		&.mobile
 			display none
-			overflow hidden
+			z-index 1000
+			overflow visible
 			padding 10px 0 10px 10px !important
 			
 			.yali_header__element
@@ -119,20 +143,44 @@ body
 						height 100%
 				
 				&--menus
-					display flex
-					flex auto !important
-					margin-left auto
-					white-space nowrap
-					overflow-x scroll
-					overflow-y hidden
-
+					position fixed
+					top 0
+					right -100%
+					width 75%
+					height 100%
+					padding 20px
+					background rgba(255,255,255,.98)
+					-webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)
+					box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)
+					transition .2s right ease-in-out
+					
+					&.slide-in
+						right 0
+							
 				&--nav
-					flex auto
 					margin-right 20px
 					
 					&>ul
 						position relative !important
+						verticalAlign(auto, auto, 0, 0)
 						text-align left !important
+						
+						li
+							display block
+							margin 10px
+							
+							&.dropdown
+								ul
+									position relative
+									padding 0 !important
+									display block
+									
+									li
+										margin 10px 0 10px 10px
+										padding 0
+										-webkit-box-shadow none
+										box-shadow none
+										background none
 		
 		&.minimized
 			height 60px
@@ -142,7 +190,7 @@ body
 			box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)
 			
 			.yali_header__element--nav ul li.dropdown ul
-				padding-top 42px !important
+				padding-top 42px
 		
 		&__element						
 			&--nav
@@ -177,7 +225,7 @@ body
 								-o-transform none
 								transform none
 								border-radius 2px
-								padding-top 51px !important
+								padding-top 51px
 								
 								li
 									display block !important

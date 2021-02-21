@@ -1,5 +1,22 @@
+{% if settings.show_announcement %}
+	<div class="yali_announcement">
+		<div class="yali_announcement__relativewrap">
+			<a href="{{ settings.announcement_link }}" class="yali_announcement__link">
+				{{ settings.announcement_text }}
+			</a>
+			<button id="yali_announcement__close">
+				<i class="fal fa-times"></i>
+			</button>
+		</div>
+	</div>
+{% endif %}
+
+<button id="yali_mobile__trigger">
+	<i class="fas fa-ellipsis-v"></i>
+</button>
+
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-template="{{ template.name }}">
-	<header class="yali_header site-header desktop" role="banner">
+	<header class="yali_header site-header desktop {% if settings.show_announcement %} announcement {% endif %}" role="banner">
 		<nav class="yali_header__element--nav">
 			<ul class="nav navbar-nav">
 			{% for link in linklists[section.settings.main_menu_link_list].links %}
@@ -57,7 +74,7 @@
 			</ul>
 		</nav>
 	</header>
-	<header class="yali_header mobile site-header minimized" role="banner">
+	<header class="yali_header mobile site-header minimized {% if settings.show_announcement %} announcement {% endif %}" role="banner">
 		<div class="yali_header__element--logo">
 			<a href="/">
 				<img src="{{ section.settings.logo | img_url: 'original' }}" alt="Yali Tribe Logo">
