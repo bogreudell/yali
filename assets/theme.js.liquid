@@ -3728,6 +3728,13 @@ function navDropdownsMobile(){
 	});
 }
 
+function announcementBanner(){
+	$('#yali_announcement__close').click(function(){
+		$('.yali_announcement').hide();
+		$('body, .yali_header').removeClass('announcement');
+	});
+}
+
 function productThumbnails(){
 	var $mainProductImage = $('.yali_photo img'),
 		$productThumbnails = $('.yali_thumbnails img');
@@ -3762,12 +3769,26 @@ function closeModule(){
 	});
 }
 
+function mobileNav(){
+	$('#yali_mobile__trigger').click(function(){
+		$('body .yali_header.mobile .yali_header__element--menus').toggleClass('slide-in');
+	});
+}
+
 $(document).ready(function(){
 	// modify dropdown menus on mobile
-	navDropdownsMobile();
+	// navDropdownsMobile(); -- deprecate
 
+	mobileNav();
 	// minimize header on page scroll
 	// minimizeHeader();
+
+	// check if announcement exists
+	if ( $('body').hasClass('announcement') ){
+		console.log('announcement time');
+		// run announcement banner controls
+		announcementBanner();
+	}
 
 	// run certain functions on homepage only
 	if ( $('body').hasClass('template-index') ) {

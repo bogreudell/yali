@@ -1,5 +1,26 @@
 [
   {
+    "name": "Announcements Banner",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show?",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "announcement text"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "announcement link"
+      }
+    ]
+  },
+  {
     "name": "Desktop Banner Video",
     "settings": [
       {

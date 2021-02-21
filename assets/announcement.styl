@@ -1,0 +1,55 @@
+.yali_announcement
+	z-index 1000
+	position fixed
+	top 0
+	left 0
+	width 100%
+	box-sizing border-box
+	padding 9px
+	text-align center
+	background $red
+	border 1px solid $red
+	
+	&__relativewrap
+		position relative
+		
+		#yali_announcement__close
+			position absolute
+			margin 0
+			padding 0
+			border 0
+			background none
+			verticalAlign(50%,99%,0,-50%)
+			color $white
+			font-size 12pt
+			
+			&:focus
+				outline none
+	
+	&__link
+		display block
+		width 100%
+		text-align center
+		interactiveCopy(700, $white, 10pt)
+		
+	&:hover
+		background $white
+		border-left 0
+		border-right 0
+		
+		.yali_announcement
+			&__link
+				color $red
+			
+			&__relativewrap
+				#yali_announcement__close
+					color $red
+
+@media all and (max-width:768px)
+	.yali_announcement
+		&__relativewrap
+			#yali_announcement__close
+				left 90% !important
+				font-size 20pt
+				width 12.75%
+				z-index 10000000
