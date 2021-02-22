@@ -12,6 +12,7 @@ body.announcement #yali_mobile__trigger {
   top: 57px;
 }
 body #yali_mobile__trigger {
+  display: none;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -403,6 +404,9 @@ body .yali_footer__copyright {
     -moz-transform: rotate(0) !important;
     -o-transform: rotate(0) !important;
     transform: rotate(0) !important;
+  }
+  #yali_mobile__trigger {
+    display: block !important;
   }
   .yali_header.desktop {
     display: none;
@@ -953,4 +957,155 @@ body.template-product .product-single__sizes--wrapper table tr td:after {
   body.template-product #shopify-section-related-products .grid .grid__item .grid__item.grid-product {
     width: 100%;
   }
+}
+body.template-blog .wrapper {
+  max-width: none;
+  padding: 0;
+}
+body.template-blog .section-header {
+  padding-top: 94px;
+}
+body.template-blog .yali_blog {
+  width: 100%;
+}
+body.template-blog .yali_blog__preview {
+  padding: 94px 0;
+}
+body.template-blog .yali_blog__preview:first-of-type {
+  padding-top: 0;
+}
+body.template-blog .yali_blog__preview:nth-of-type(even) {
+  background: #fff;
+}
+body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__thumbnail {
+  float: right;
+}
+body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__excerpt {
+  float: right;
+  padding-left: 0;
+  padding-right: 5%;
+  text-align: right;
+}
+body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__excerpt h2 {
+  padding-right: 0;
+  padding-left: 20%;
+  text-align: right;
+}
+body.template-blog .yali_blog__content {
+  max-width: 1050px;
+  margin: auto;
+}
+body.template-blog .yali_blog__thumbnail {
+  width: 40%;
+  float: left;
+}
+body.template-blog .yali_blog__thumbnail .article__featured-image-link {
+  margin-bottom: 0;
+}
+body.template-blog .yali_blog__excerpt {
+  width: 55%;
+  float: left;
+  padding-left: 5%;
+}
+body.template-blog .yali_blog__excerpt h2 {
+  font-family: garvis-pro, serif;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding-right: 20%;
+}
+body.template-blog .yali_blog__excerpt--copy {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 30px 0;
+}
+body.template-blog .yali_blog__excerpt>a {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-style: italic;
+}
+body.template-blog .yali_blog .clear {
+  clear: both;
+}
+@media all and (max-width: 768px) {
+  body.template-blog .section-header {
+    padding-top: 30px;
+  }
+  body.template-blog .yali_blog__thumbnail {
+    width: 100%;
+    float: none !important;
+  }
+  body.template-blog .yali_blog__excerpt {
+    width: 96%;
+    padding: 0 4% !important;
+    text-align: left !important;
+    float: none !important;
+  }
+  body.template-blog .yali_blog__excerpt h2 {
+    margin-top: 30px;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+}
+body.template-article .main-content {
+  padding-bottom: 0;
+}
+body.template-article .section-header {
+  max-width: 550px;
+  margin: auto;
+  padding-top: 94px;
+}
+body.template-article .section-header p {
+  margin-bottom: 0;
+}
+body.template-article .section-header p .date {
+  margin-bottom: 0;
+}
+body.template-article .yali_article__content {
+  width: 98%;
+  max-width: 600px;
+  margin: 94px auto 0;
+}
+body.template-article .yali_article__content div,
+body.template-article .yali_article__content p,
+body.template-article .yali_article__content em {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 30px 0;
+}
+body.template-article .yali_article__content img {
+  max-width: 100% !important;
+  height: auto;
+}
+body.template-article .social-sharing {
+  text-align: center;
+}
+body.template-article .social-sharing a {
+  background: #de0026;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f1f0f5;
+  font-size: 10pt;
+}
+@media all and (max-width: 768px) {
+  body.template-article .section-header {
+    padding-top: 47px;
+  }
+}
+.pagination {
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 10pt;
+/* font weights - 500 and 700 */
+}
+.pagination .current {
+  color: #de0026 !important;
 }
