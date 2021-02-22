@@ -10,6 +10,7 @@ body.announcement #yali_mobile__trigger {
   top: 57px;
 }
 body #yali_mobile__trigger {
+  display: none;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -328,6 +329,9 @@ body .yali_footer__copyright {
     -moz-transform: rotate(0) !important;
     -o-transform: rotate(0) !important;
     transform: rotate(0) !important;
+  }
+  #yali_mobile__trigger {
+    display: block;
   }
   .yali_header.desktop {
     display: none;
