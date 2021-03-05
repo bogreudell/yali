@@ -1,0 +1,48 @@
+body.template-article .main-content {
+  padding-bottom: 0;
+}
+body.template-article .section-header {
+  max-width: 550px;
+  margin: auto;
+  padding-top: $verticalMarginsShort;
+}
+body.template-article .section-header p {
+  margin-bottom: 0;
+}
+body.template-article .section-header p .date {
+  margin-bottom: 0;
+}
+body.template-article .yali_article__content {
+  width: 98%;
+  max-width: 600px;
+  margin: $verticalMarginsShort auto 0;
+}
+body.template-article .yali_article__content div,
+body.template-article .yali_article__content p,
+body.template-article .yali_article__content em {
+  font-family: garvis-pro, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 30px 0;
+}
+body.template-article .yali_article__content img {
+  max-width: 100% !important;
+  height: auto;
+}
+body.template-article .social-sharing {
+  text-align: center;
+}
+body.template-article .social-sharing a {
+  background: #de0026;
+  font-family: brother-1816, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f1f0f5;
+  font-size: 10pt;
+}
+@media all and (max-width: 768px) {
+  body.template-article .section-header {
+    padding-top: 47px;
+  }
+}

@@ -5,10 +5,9 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 9px;
+  padding: 10px;
   text-align: center;
-  background: $red;
-  border: 1px solid $red;
+  border: none;
 }
 .yali_announcement__relativewrap {
   position: relative;
@@ -30,16 +29,8 @@
   width: 100%;
   text-align: center;
 }
-.yali_announcement:hover {
-  background: $white;
-  border-left: 0;
-  border-right: 0;
-}
-.yali_announcement:hover .yali_announcement__link {
-  color: $red;
-}
-.yali_announcement:hover .yali_announcement__relativewrap #yali_announcement__close {
-  color: $red;
+.yali_announcement__link:hover {
+  color: $white;
 }
 @media all and (max-width: 768px) {
   .yali_announcement__relativewrap #yali_announcement__close {
