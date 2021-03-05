@@ -5,10 +5,9 @@
 	left 0
 	width 100%
 	box-sizing border-box
-	padding 9px
+	padding 10px
 	text-align center
-	background $red
-	border 1px solid $red
+	border none
 	
 	&__relativewrap
 		position relative
@@ -32,18 +31,8 @@
 		text-align center
 		interactiveCopy(700, $white, 10pt)
 		
-	&:hover
-		background $white
-		border-left 0
-		border-right 0
-		
-		.yali_announcement
-			&__link
-				color $red
-			
-			&__relativewrap
-				#yali_announcement__close
-					color $red
+		&:hover
+			color $white
 
 @media all and (max-width:768px)
 	.yali_announcement

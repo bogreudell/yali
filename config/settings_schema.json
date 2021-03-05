@@ -17,6 +17,12 @@
         "type": "url",
         "id": "announcement_link",
         "label": "announcement link"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "background color",
+        "default": "#de0026"
       }
     ]
   },

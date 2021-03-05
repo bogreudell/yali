@@ -452,10 +452,9 @@ body .yali_footer__copyright {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 9px;
+  padding: 10px;
   text-align: center;
-  background: #de0026;
-  border: 1px solid #de0026;
+  border: none;
 }
 .yali_announcement__relativewrap {
   position: relative;
@@ -489,16 +488,8 @@ body .yali_footer__copyright {
   font-size: 10pt;
 /* font weights - 500 and 700 */
 }
-.yali_announcement:hover {
-  background: #f1f0f5;
-  border-left: 0;
-  border-right: 0;
-}
-.yali_announcement:hover .yali_announcement__link {
-  color: #de0026;
-}
-.yali_announcement:hover .yali_announcement__relativewrap #yali_announcement__close {
-  color: #de0026;
+.yali_announcement__link:hover {
+  color: #f1f0f5;
 }
 @media all and (max-width: 768px) {
   .yali_announcement__relativewrap #yali_announcement__close {
