@@ -2,91 +2,18 @@ body.template-blog .wrapper {
   max-width: none;
   padding: 0;
 }
-body.template-blog .section-header {
-  padding-top: $verticalMarginsShort;
-}
 body.template-blog .yali_blog {
   width: 100%;
 }
-body.template-blog .yali_blog__preview {
-  padding: $verticalMarginsShort 0;
-}
-body.template-blog .yali_blog__preview:first-of-type {
-  padding-top: 0;
-}
-body.template-blog .yali_blog__preview:nth-of-type(even) {
-  background: $whiteBright;
-}
-body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__thumbnail {
-  float: right;
-}
-body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__excerpt {
-  float: right;
-  padding-left: 0;
-  padding-right: 5%;
-  text-align: right;
-}
-body.template-blog .yali_blog__preview:nth-of-type(even) .yali_blog__excerpt h2 {
-  padding-right: 0;
-  padding-left: 20%;
-  text-align: right;
-}
-body.template-blog .yali_blog__content {
-  max-width: 1050px;
-  margin: auto;
-}
 body.template-blog .yali_blog__thumbnail {
-  width: 40%;
   float: left;
-}
-body.template-blog .yali_blog__thumbnail .article__featured-image-link {
-  margin-bottom: 0;
-}
-body.template-blog .yali_blog__excerpt {
-  width: 55%;
-  float: left;
-  padding-left: 5%;
-}
-body.template-blog .yali_blog__excerpt h2 {
-  font-family: garvis-pro, serif;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  padding-right: 20%;
-}
-body.template-blog .yali_blog__excerpt--copy {
-  font-family: garvis-pro, serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin: 30px 0;
-}
-body.template-blog .yali_blog__excerpt>a {
-  font-family: garvis-pro, serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  font-style: italic;
+  width: calc(100% / 3);
 }
 body.template-blog .yali_blog .clear {
   clear: both;
 }
 @media all and (max-width: 768px) {
-  body.template-blog .section-header {
-    padding-top: 30px;
-  }
   body.template-blog .yali_blog__thumbnail {
-    width: 100%;
-    float: none !important;
-  }
-  body.template-blog .yali_blog__excerpt {
-    width: 96%;
-    padding: 0 4% !important;
-    text-align: left !important;
-    float: none !important;
-  }
-  body.template-blog .yali_blog__excerpt h2 {
-    margin-top: 30px;
-    padding: 0 !important;
-    text-align: left !important;
+    width: 50%;
   }
 }
