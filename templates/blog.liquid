@@ -18,17 +18,11 @@
     </header>
 
 <div class="yali_blog">
-
     {% for article in blog.articles %}
-
       {% assign article_content = article.excerpt_or_content %}
-
-      <div class="yali_blog__preview">
-
-        <div class="yali_blog__content">
           {% unless article.image == blank %}
             <div class="yali_blog__thumbnail">
-              <a class="article__featured-image-link" href="{{ article.url }}">
+              <a class="" href="{{ article.url }}">
                 <noscript>
                   {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
                 </noscript>
@@ -45,33 +39,13 @@
               </a>
             </div>
           {% endunless %}
-
-          <div class="yali_blog__excerpt">
-            <h2 class="h3"><a class="article__heading-link" href="{{ article.url }}">{{ article.title }}</a></h2>
-            <div class="yali_blog__excerpt--copy">
-              {{ article_content | strip_html | truncatewords: 120 }}
-            </div>
-
-            <a href="{{ article.url }}" class="text-link">{{ 'blogs.article.read_more' | t }} <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
-
-            {% if article.tags.size > 0 %}
-              <ul class="tags tags--article inline-list">
-                {% include 'tags-article' %}
-              </ul>
-            {% endif %}
-          </div>
-          <div class="clear"></div>
-        </div>
-      </div><!-- end blog preview -->
-
       {%comment%}{% unless forloop.last %}<hr class="hr--clear">{% endunless %}{%endcomment%}
-
     {% endfor %}
+    <div class="clear"></div>
+</div>
 
-    {% if paginate.pages > 1 %}
+  {% if paginate.pages > 1 %}
       {% include 'pagination' %}
     {% endif %}
-
-</div>
 
 {% endpaginate %}

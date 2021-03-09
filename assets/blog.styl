@@ -5,70 +5,14 @@ body
 			padding 0
 		
 		.section-header
-			padding-top $verticalMarginsShort
+			// silence is golden
 						
 		.yali_blog
 			width 100%
 			
-			&__preview
-				padding $verticalMarginsShort 0
-				
-				&:first-of-type
-					padding-top 0
-				
-				&:nth-of-type(even)
-					background $whiteBright
-					
-					.yali_blog
-						&__thumbnail
-							float right
-							
-						&__excerpt
-							float right
-							padding-left 0
-							padding-right 5%
-							text-align right
-							
-							h2
-								padding-right 0
-								padding-left 20%
-								text-align right
-			
-			&__content
-				max-width 1050px
-				margin auto			
-					
 			&__thumbnail
-				width 40%
 				float left
-				
-				.article__featured-image-link
-					margin-bottom 0
-			
-			&__excerpt
-				width 55%
-				float left
-				padding-left 5%
-				
-				h2
-					font-family garvis-pro, serif
-					font-size 1.5rem
-					text-transform capitalize
-					padding-right 20%
-				
-				&--copy
-					font-family garvis-pro, serif
-					font-weight 400
-					font-size 1rem
-					line-height 1.5rem
-					margin 30px 0
-				
-				&>a
-					font-family garvis-pro, serif
-					font-weight 400
-					font-size 1.25rem
-					line-height 1.5rem
-					font-style italic
+				width calc(100%/3)
 			
 			.clear
 				clear both
@@ -77,20 +21,8 @@ body
 	body
 		&.template-blog
 			.section-header
-				padding-top 30px
+				// silence is golden
 			
-			.yali_blog
+			.yali_blog				
 				&__thumbnail
-					width 100%
-					float none !important
-					
-				&__excerpt
-					width 96%
-					padding 0 4% !important
-					text-align left !important
-					float none !important
-					
-					h2
-						margin-top 30px
-						padding 0 !important
-						text-align left !important
+					width 50%
