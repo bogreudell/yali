@@ -4,7 +4,7 @@ body.template-article .main-content {
 body.template-article .section-header {
   max-width: 550px;
   margin: auto;
-  padding-top: $verticalMarginsShort;
+  padding-top: 0;
 }
 body.template-article .section-header p {
   margin-bottom: 0;
@@ -15,7 +15,7 @@ body.template-article .section-header p .date {
 body.template-article .yali_article__content {
   width: 98%;
   max-width: 600px;
-  margin: $verticalMarginsShort auto 0;
+  margin: 0 auto;
 }
 body.template-article .yali_article__content div,
 body.template-article .yali_article__content p,
@@ -29,6 +29,7 @@ body.template-article .yali_article__content em {
 body.template-article .yali_article__content img {
   max-width: 100% !important;
   height: auto;
+  margin: auto !important;
 }
 body.template-article .social-sharing {
   text-align: center;
