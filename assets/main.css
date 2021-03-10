@@ -974,7 +974,7 @@ body.template-article .main-content {
 body.template-article .section-header {
   max-width: 550px;
   margin: auto;
-  padding-top: 0;
+  padding-top: 47px;
 }
 body.template-article .section-header p {
   margin-bottom: 0;
@@ -1014,7 +1014,7 @@ body.template-article .social-sharing a {
 }
 @media all and (max-width: 768px) {
   body.template-article .section-header {
-    padding-top: 47px;
+    padding-top: 0;
   }
 }
 .pagination {
