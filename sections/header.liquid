@@ -1,11 +1,11 @@
 {% if settings.show_announcement %}
 	<div style="background:{{ settings.background_color }}" class="yali_announcement">
 		<div class="yali_announcement__relativewrap">
-			<a href="{{ settings.announcement_link }}" class="yali_announcement__link">
+			<a style="color:{{ settings.text_color }}" href="{{ settings.announcement_link }}" class="yali_announcement__link">
 				{{ settings.announcement_text }}
 			</a>
 			<button id="yali_announcement__close">
-				<i class="fal fa-times"></i>
+				<i style="color:{{ settings.text_color }}" class="fal fa-times"></i>
 			</button>
 		</div>
 	</div>
